@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CadastroEventos.Views.CadastroEventoPage"
+    Title="Cadastro de Eventos"
+    BackgroundColor="#F4F6FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="15">
+
+            <Label
+                Text="Cadastro de Eventos"
+                FontSize="26"
+                FontAttributes="Bold"
+                TextColor="#263A63"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="Preencha os dados do evento"
+                FontSize="14"
+                TextColor="Gray"
+                HorizontalOptions="Center"/>
+
+            <Label Text="Nome do evento" FontAttributes="Bold"/>
+            <Entry
+                Placeholder="Digite o nome do evento"
+                Text="{Binding NomeEvento}"/>
+
+            <Label Text="Data de início" FontAttributes="Bold"/>
+            <DatePicker
+                Date="{Binding DataInicio}"
+                Format="dd/MM/yyyy"/>
+
+            <Label Text="Data de término" FontAttributes="Bold"/>
+            <DatePicker
+                Date="{Binding DataTermino}"
+                Format="dd/MM/yyyy"/>
+
+            <Label Text="Número de participantes" FontAttributes="Bold"/>
+            <Entry
+                Placeholder="Quantidade de participantes"
+                Keyboard="Numeric"
+                Text="{Binding NumeroParticipantes}"/>
+
+            <Label Text="Local do evento" FontAttributes="Bold"/>
+            <Entry
+                Placeholder="Digite o local do evento"
+                Text="{Binding LocalEvento}"/>
+
+            <Label Text="Custo por participante (R$)" FontAttributes="Bold"/>
+            <Entry
+                Placeholder="Ex: 50,00"
+                Keyboard="Numeric"
+                Text="{Binding CustoPorParticipante}"/>
+
+            <Button
+               Text="CONTINUAR"
+               BackgroundColor="#263A63"
+               TextColor="White"
+               FontAttributes="Bold"
+               CornerRadius="12"
+               HeightRequest="50"
+               Clicked="OnContinuarClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
